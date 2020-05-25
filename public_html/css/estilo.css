@@ -1,0 +1,446 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 16 may. 2020, 17:17:32
+    Author     : LuisP
+*/
+
+/*Menu no tocar*/
+
+
+
+*{
+    cursor: url('../images/cuchillo.png') 25 15, auto;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+
+
+
+body{
+    background-image:url(../images/fondo1.jpg) ;
+    overflow-x: hidden;
+}
+
+/* ---------Logo principal --------*/
+.logo{
+	width: 17%;
+	z-index: -1;
+
+}
+
+/* ---------Texto vertical -----------*/
+.slider{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.textovertical {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+	font-size: 500%;
+	z-index: -1;
+	font-style: italic;
+	letter-spacing: 5pt;
+	color: rgba(  0, 0, 0 , 0.65);
+
+}
+
+/*---------------- Traductor ----------*/
+.idiomas{
+
+	margin-left:90%;
+
+
+}
+#ftwtranslation_image{
+	width:200px;
+}
+/*---------------- Fin traductor ----------*/
+
+
+
+/* -----------------------------MENU---------------- */
+/*Estilo del pulsador*/
+.boton img{
+    background-color:black ;
+    width: 50px;
+    height: 50px;
+    transition: right, 1s;
+    border-radius: 40px;
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    left: 2px;
+}
+
+/*Quitar la caja del checkbox*/
+.selector{
+    display: none;
+}
+
+/*Estilo del boton una vez pulsado*/
+.selector:checked ~ .boton img{
+    border-radius: 0 40px  40px 0;
+    left: 15%;
+}
+
+/*Icono del restaurante*/
+header img{
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    max-height: 200px;
+    position: relative;
+}
+/*Desplazamien*/
+.selector:checked ~ .cabezera{
+    left: 0;
+
+}
+
+.cabezera{
+  z-index: 10;
+	position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    transition: right, 1s;
+    width: 15%;
+    margin-top: 0px;
+    height: 100%;
+    left: -15%;
+    background-color: white;
+    border-radius:0 25px 25px 0;
+}
+
+
+nav{
+
+    margin: 45%;
+    width: 50%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+nav p {
+    margin: 20px 0.5%;
+    border: white 2px inset;
+    text-align: center;
+
+}
+
+.topmenu{
+
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-around;
+    align-content: space-around;
+
+}
+.topmenu a{
+    color: black;
+    text-decoration: none;
+    font-size: x-large;
+    letter-spacing: 3pt;
+    cursor: url('../images/cuchilloS.png') 25 15, auto;
+
+}
+/*------------------ FIN DE MENU--------------------- */
+
+main{
+    margin: auto 50px;
+}
+
+.opiniones{
+	position: relative;
+    margin-top: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba( 255, 255, 255, 0.75);
+}
+
+.tituloO{
+    font-size: 1.5em;
+    font-variant-caps: small-caps;
+    color:black;
+    text-align:center;
+    width: 100%;
+}
+.opinion{
+	padding:2%;
+    text-align: center;
+    width: 25%;
+    float: left;
+
+}
+
+.opinion img{
+    height: auto;
+    width: auto;
+    max-width: 30%;
+    max-height: 35%;
+    border-radius: 50%;
+}
+/* --------Pie de pagina -----------*/
+
+footer{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer img{
+    height: 125px;
+    width: 250px;
+    max-height: 50%;
+    max-width: 50%;
+    cursor: url('../images/cuchilloS.png') 25 15, auto;
+}
+
+.foto1{
+  width: 100%;
+   border-radius:40px;
+
+
+}
+
+/*---------------- Fin pie de pagina ----------*/
+
+
+
+/* --------------------Letras que aparecen -------------------------*/
+
+.contenedor{
+	display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    font-size: 43px;
+    line-height:41px;
+
+
+	position: relative;
+	top:60px;
+	right:0;
+	bottom: 0;
+	left: -150px;
+	margin: auto;
+
+}
+.subcontenedor{
+  margin-left: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 36px;
+}
+
+.subcontenedor ul{
+	list-style: none;
+	padding-left: 10px;
+	animation: cambiar 7s infinite;
+}
+
+
+@keyframes cambiar{
+  0%{margin-top: 0;}
+   20%{margin-top: 0;}
+   25%{margin-top: -40px;}
+   50%{margin-top: -40px;}
+   55%{margin-top: -82px;}
+   80%{margin-top: -82px;}
+   85%{margin-top: -40px;}
+   95%{margin-top: -40px;}
+   100%{margin-top: 0;}
+}
+
+.subcontenedor li{
+	 font-style: oblique;
+	color: white;
+
+}
+.subcontenedor span{
+	 font-style: oblique;
+}
+
+/* ----------------------Fin de letras que aparecen------------------------ */
+
+/* ----------------------Carrusel de fotos-------------------*/
+
+.carousel {
+  overflow-y: hidden;
+   width: 85%;
+	box-shadow: 5px 5px 28px -4px rgba(0,0,0,0.75);
+    margin-top: 8%;
+	margin-bottom:2%;
+	margin-left: 17%;
+	position: relative;
+}
+
+.carousel-inner {
+    position: static;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: url('../images/cuchilloS.png') 25 15, pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 60%;
+
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: url('../images/cuchilloS.png') 25 15, pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #428bca;
+}
+/* ------------------------Fin de carrusel ---------------------------*/
+
+/*------------ SEPARADOR ------------*/
+.separador{
+margin-left: 6%;
+margin-bottom: 5%;
+width: 90%;
+height: 140px;
+}
+/* -----------FIN SEPARADOR ----------*/
+
+/* -----FOTO CON TEXTO DESLIZANTE --------*/
+
+.container {
+  margin-top:15%;
+  position: relative;
+  width: 50%;
+
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba( 255, 255, 255, 0.8);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+
+.imagen{
+	width: 200%;
+
+}
+
+.container:hover .overlay {
+  width: 100%;
+
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+/* -----FIN DE FOTO CON TEXTO DESLIZANTE --------*/
