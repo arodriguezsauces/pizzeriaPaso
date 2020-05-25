@@ -3,8 +3,7 @@ Diseñar una web que nos muestre la carta de un restaurante
 
 ## TAREAS a realizar por cada equipo
 
-	Prototipo de la web
-	
+	Prototipo de la web Los Tildaos
 
 ## DEFENSA 
 
