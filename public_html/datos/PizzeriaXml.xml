@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<restaurante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PizzeriaXml.xsd">
+    <pizzas>
+        <pizza codPizza="P01">
+            <nombre>Dawers Rangers</nombre> 
+            <precio>9</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>champinon</ingrediente>
+                <ingrediente>atun</ingrediente>
+                <ingrediente>aceituna negra</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="rellena"/>
+            <tamano tipoTamano="familiar"/>
+            <foto tipoFoto="png"/>
+            <link>www.thecreatorspizza.es/dawersrangers</link>
+        </pizza>
+        <pizza codPizza="P02">
+            <nombre>TheCreators</nombre> 
+            <precio>7.5</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>pina</ingrediente>
+                <ingrediente>bacon</ingrediente>
+                <ingrediente>aceituna verde</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="cuadrada"/>
+            <tamano tipoTamano="pequena"/>
+            <foto tipoFoto="jpg"/>
+            <link>www.thecreatorspizza.es/thecreators</link>
+        </pizza>
+        <pizza codPizza="P03">
+            <nombre>La banda del patio</nombre> 
+            <precio>6.5</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>carne</ingrediente>
+                <ingrediente>salsa barbacoa</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="fina"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="jpg"/>
+            <link>www.thecreatorspizza.es/labandadelpatio</link>
+        </pizza>
+        <pizza codPizza="P04">
+            <nombre>Heavy Afternoon</nombre> 
+            <precio>8</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>queso cheddar</ingrediente>
+                <ingrediente>atun</ingrediente>
+                <ingrediente>maiz</ingrediente>
+                <ingrediente>bacon</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="gruesa"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="jpg"/>
+            <link>www.thecreatorspizza.es/heavyafternoon</link>
+        </pizza>
+        <pizza codPizza="P05">
+            <nombre>Los Tildaos</nombre> 
+            <precio>13</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>queso parmesano</ingrediente>
+                <ingrediente>queso cheddar</ingrediente>
+                <ingrediente>queso azul</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>champinon</ingrediente>
+                <ingrediente>aceituna negra</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="pan"/>
+            <tamano tipoTamano="familiar"/>
+            <foto tipoFoto="png"/>
+            <link>www.thecreatorspizza.es/lostildaos</link>
+        </pizza>
+        <pizza codPizza="P06">
+            <nombre>4 quesos</nombre> 
+            <precio>10</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>queso parmesano</ingrediente>
+                <ingrediente>queso cheddar</ingrediente>
+                <ingrediente>queso azul</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="gruesa"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="png"/>
+            <link>www.thecreatorspizza.es/4quesos</link>
+        </pizza>
+        <pizza codPizza="P07">
+            <nombre>barbacoa</nombre> 
+            <precio>10</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>bacon</ingrediente>
+                <ingrediente>carne</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>salsa barbacoa</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="gruesa"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="jpg"/>
+            <link>www.thecreatorspizza.es/barbacoa</link>
+        </pizza>
+        <pizza codPizza="P08">
+            <nombre>carbonara</nombre> 
+            <precio>10</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>champinon</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>cebolla</ingrediente>
+                <ingrediente>champinon</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="gruesa"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="png"/>
+            <link>www.thecreatorspizza.es/carbonara</link>
+        </pizza>
+        <pizza codPizza="P09">
+            <nombre>vegetal</nombre> 
+            <precio>10</precio>
+            <ingredientes>
+                <ingrediente>tomate</ingrediente>
+                <ingrediente>champinon</ingrediente>
+                <ingrediente>aceiutuna</ingrediente>
+                <ingrediente>mozzarella</ingrediente>
+                <ingrediente>maiz</ingrediente>
+                <ingrediente>cebolla</ingrediente>
+                <ingrediente>esparragos</ingrediente>
+            </ingredientes>
+            <masa tipoMasa="gruesa"/>
+            <tamano tipoTamano="mediana"/>
+            <foto tipoFoto="png"/>
+            <link>www.thecreatorspizza.es/vegetal</link>
+        </pizza>
+    </pizzas>
+    <entrantes>
+        <entrante>
+            <nombre>Alitas de pollo</nombre>
+            <precio>1.5</precio>
+            <cantidad tipoCantidad="unidad">6</cantidad>
+        </entrante>
+        <entrante>
+            <nombre>Nuggets</nombre>
+            <precio>1</precio>
+            <cantidad tipoCantidad="unidad">6</cantidad>
+        </entrante>
+        <entrante>
+            <nombre>Patatas con bacon y queso</nombre>
+            <precio>3</precio>
+            <cantidad tipoCantidad="racion">1</cantidad>
+        </entrante>
+        <entrante>
+            <nombre>Bolitas de queso</nombre>
+            <precio>1.5</precio>
+            <cantidad tipoCantidad="unidad">10</cantidad>
+        </entrante>
+        <entrante>
+            <nombre>Ensalada</nombre>
+            <precio>3</precio>
+            <cantidad tipoCantidad="racion">1</cantidad>
+        </entrante>
+    </entrantes>    
+    <postres>
+        <postre codigoPostre="01">
+            <nombre sabor="oreo">Cono helado</nombre>            
+            <precio>2</precio>
+        </postre>
+        <postre codigoPostre="02">
+            <nombre sabor="coockie">Tarrina de helado</nombre>
+            <precio>1.5</precio>
+        </postre>
+        <postre codigoPostre="03">
+            <nombre>Tarta de chocolate</nombre>
+            <precio>2</precio>
+        </postre>
+        <postre codigoPostre="04">
+            <nombre>Brownie</nombre>
+            <precio>1</precio>
+        </postre>
+        <postre codigoPostre="05">
+            <nombre sabor="kitkat">Sorbete de helado</nombre>
+            <precio>2</precio>
+        </postre>
+        <postre codigoPostre="06">
+            <nombre>Tarta de queso</nombre>
+            <precio>2.5</precio>
+        </postre>
+    </postres>
+    <bebidas>
+        <refresco marcaRefresco="bitter_kas">
+            <precio>1.5</precio>
+            <cantidad>1</cantidad>
+        </refresco> 
+        <agua tipo="tiempo" tipoAgua="mineral">
+            <precio>1</precio>
+            <cantidad>2</cantidad>
+        </agua>
+        <cerveza marcaCerveza="keler" tipoCerveza="lagger">
+            <precio>2.24</precio>
+            <cantidad>5</cantidad>
+        </cerveza>
+    </bebidas>
+</restaurante>
+<!--
+    -*-ATRIBUTOS Y VALORES-*-
+    <PIZZAS>
+        -General:
+            -codPizza=P01,P02,P03,P04,P05,P06,P07,P08.
+        -Masa:
+            -tipoMasa=fina, gruesa, pan, cuadrada, rellena.
+        -Tamano:
+            -tipoTamano=pequena, mediana, familiar.
+        -Foto:
+            -tipoFoto=jpg, png.
+    <ENTRANTES>
+        Cantidad:
+            -tipoCantidad:racion, unidad.
+    <POSTRES>
+        Nombre:
+            /OPCIONAL\-sabor:oreo, coockie, kitkat, caramelo.
+            -codigoPostre:01,02,03,04,05,06.
+    <BEBIDAS>
+        -General:
+            tipo=frio, tiempo.
+        -Agua:
+            -tipoAgua=mineral, sin_gas, con_gas.
+        -Cerveza: 
+            -tipoCerveza=0.0, sin alcohol, normal, lagger.
+            -marcaCerveza=paulaner, superboock, keler, heineken, mahou, estrella, amstel, corona, voll_damm, buckler.
+        -Refrescos:
+            -marcaRefresco=pepsi,cocacola, cocacola_ligth, kas_naranja, kas_limon, fanta_naranja, fanta_limon, 7up, nestea, aquarius, redbull, bitter_kas
+    <MENUS>
+        -Menu:
+            -codigoMenu=01,02
+-->

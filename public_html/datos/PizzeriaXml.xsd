@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Elementos complejos-->
+    <xs:element name="restaurante" type="RESTAURANTE"/>
+    
+    
+    <!--Elementos simples-->
+    
+    <!--Tipos para elementos, simples y complejos-->
+       
+    <!--Tipo RESTAURANTE es el tipo del elemento raiz-->
+    <xs:complexType name="RESTAURANTE">
+        <xs:sequence>
+            <xs:element name="pizzas" type="PIZZAS"/>
+            <xs:element name="entrantes" type="ENTRANTE"/>
+            <xs:element name="postres" type="POSTRES"/>
+            <xs:element name="bebidas" type="BEBIDAS"/>
+        </xs:sequence>
+    </xs:complexType>
+       
+    <xs:complexType name="PIZZAS">
+        <xs:sequence>
+            <xs:element name="pizza" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="precio" type="DECIMAL"/>
+                    <xs:element name="ingredientes">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ingrediente" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="masa" type="MASA"/>
+                    <xs:element name="tamano" type="TAMANO"/>
+                    <xs:element name="foto" type="FOTO"/>
+                    <xs:element name="link">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:pattern value="www.thecreatorspizza.es/[a-z0-9]*"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    </xs:sequence>
+                    <xs:attribute ref="codPizza" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <!--Tipos para subtipos de pizza-->
+    <xs:complexType name="MASA">
+        <xs:attribute ref="tipoMasa" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="TAMANO">
+        <xs:attribute ref="tipoTamano" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FOTO">
+        <xs:attribute ref="tipoFoto" use="required"/>
+    </xs:complexType>
+
+    <!--Fin de subtipos de la pizza-->
+    <xs:complexType name="ENTRANTE">
+        <xs:sequence>
+            <xs:element name="entrante" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="xs:string"/>
+                        <xs:element name="precio" type="DECIMAL"/>
+                        <xs:element name="cantidad">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:positiveInteger">
+                                        <xs:attribute ref="tipoCantidad" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="POSTRES">
+        <xs:sequence>
+            <xs:element name="postre" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute ref="sabor" use="optional" default="oreo"/>
+                                    </xs:extension> 
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="precio" type="DECIMAL"/>
+                    </xs:sequence>
+                    <xs:attribute ref="codigoPostre" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="BEBIDAS">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="agua" type="AGUA"/>
+            <xs:element name="cerveza" type="CERVEZA"/>
+            <xs:element name="refresco" type="REFRESCO"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <!--Comun para los tres elementos -->
+    <xs:complexType name="GENERAL">
+        <xs:sequence>
+            <xs:element name="precio" type="DECIMAL"/>
+            <xs:element name="cantidad" type="xs:positiveInteger"/>
+        </xs:sequence>
+        <xs:attribute ref="tipo" default="frio" use="optional"/>
+    </xs:complexType>
+    
+    <!--Elementos de bebidas-->
+    <xs:complexType name="AGUA">
+        <xs:complexContent>
+            <xs:extension base="GENERAL">
+                <xs:attribute ref="tipoAgua" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="CERVEZA">
+        <xs:complexContent>
+            <xs:extension base="GENERAL">
+                <xs:attribute ref="tipoCerveza" use="required"/>
+                <xs:attribute ref="marcaCerveza" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="REFRESCO">
+        <xs:complexContent>
+            <xs:extension base="GENERAL">
+                <xs:attribute ref="marcaRefresco" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!--Tipo para un decimal positivo-->
+    <xs:simpleType name="DECIMAL">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--Atributos-->
+    <xs:attribute name="codPizza">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="P0[1-9]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+            
+    <xs:attribute name="tipoMasa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="fina"/>
+                <xs:enumeration value="gruesa"/>
+                <xs:enumeration value="pan"/>
+                <xs:enumeration value="cuadrada"/>
+                <xs:enumeration value="rellena"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+        
+    <xs:attribute name="tipoTamano">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="pequena"/>
+                <xs:enumeration value="mediana"/>
+                <xs:enumeration value="familiar"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipoFoto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="jpg"/>
+                <xs:enumeration value="png"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipoCantidad">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="racion"/>
+                <xs:enumeration value="unidad"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="sabor">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="oreo"/>
+                <xs:enumeration value="coockie"/>
+                <xs:enumeration value="kitkat"/>
+                <xs:enumeration value="caramelo"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="codigoPostre">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:pattern value="[0][1-6]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="frio"/>
+                <xs:enumeration value="tiempo"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipoAgua">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="mineral"/>
+                <xs:enumeration value="sin_gas"/>
+                <xs:enumeration value="con_gas"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipoCerveza">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="0.0"/>
+                <xs:enumeration value="sin alcohol"/>
+                <xs:enumeration value="normal"/>
+                <xs:enumeration value="lagger"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="marcaCerveza">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="paulaner"/>
+                <xs:enumeration value="superboock"/>
+                <xs:enumeration value="keler"/>
+                <xs:enumeration value="heineken"/>
+                <xs:enumeration value="mahou"/>
+                <xs:enumeration value="estrella"/>
+                <xs:enumeration value="amstel"/>
+                <xs:enumeration value="corona"/>
+                <xs:enumeration value="voll_damm"/>
+                <xs:enumeration value="buckler"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="marcaRefresco">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="pepsi"/>
+                <xs:enumeration value="cocacola"/>
+                <xs:enumeration value="cocacola_light"/>
+                <xs:enumeration value="kas_naranja"/>
+                <xs:enumeration value="kas_limon"/>
+                <xs:enumeration value="fanta_naranja"/>
+                <xs:enumeration value="fanta_limon"/>
+                <xs:enumeration value="7up"/>
+                <xs:enumeration value="nestea"/>
+                <xs:enumeration value="aquarius"/>
+                <xs:enumeration value="redbull"/>
+                <xs:enumeration value="bitter_kas"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+</xs:schema>

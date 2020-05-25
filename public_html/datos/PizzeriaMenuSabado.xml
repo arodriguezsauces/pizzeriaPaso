@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Pizzeria.xsd">
+    <menu codigoPizza="P01"/>
+    <menu codigoPizza="P02"/>
+    <menu codigoPizza="P03"/>
+    <menu codigoPizza="P04"/>
+    <menu codigoPizza="P05"/>
+    <menu codigoPizza="P06"/>
+    <menu codigoPizza="P07"/>
+    <menu codigoPizza="P08"/>
+    <menu codigoPizza="P09"/>
+</menus>
+<!--
+    AQUI ESTAN LAS PIZZAS DEL SABADO, ESTAN TODAS DISPONIBLES.
+-->
