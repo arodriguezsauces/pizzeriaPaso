@@ -1,0 +1,287 @@
+/* 
+    Autor.- HeavyAfternoon
+		Edited.- La Banda del Patio
+    Fecha creación.- 20/05/2020
+    Última modificación.- 22/05/2020
+*/
+
+/* Reglas de reseteo */
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+ul {
+    list-style: none;
+    padding: 5px;
+}
+/* Reglas de posicionamiento generales*/
+h1 {
+    text-align: center;
+}
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 1em;
+}
+h4 {
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+body {
+    background-color: #c39c5c;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-areas:
+        "header pizza-del-dia pizza-del-dia"
+        "pizzas pizza-del-dia pizza-del-dia"
+        "pizzas aperitivos postres"
+        "pizzas aperitivos bebidas"
+        "pizzas footer footer"
+    ;
+    grid-template-columns: auto 30% 30%;
+    grid-template-rows: 10% auto 25% 25% 15%;
+    height: 100vh;
+    padding: 10px;
+}
+body>div {
+    background-color: white;
+    padding:5px;
+}
+.aperitivos {
+    grid-area: aperitivos;
+}
+
+/* Posicionamiento de aperitivos */
+.aperitivos {
+    display: flex;
+    flex-direction: column;
+}
+.aperitivos div {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+
+@keyframes carrusel-infinito {
+	
+	0%, 16.6% { background-image: url(images/entrante1.png); }
+
+	16.6%, 33.2% { background-image: url(images/entrante2.png); }
+
+	33.2%, 49.8% { background-image: url(images/entrante3.png); }
+
+	49.8%, 66.4% { background-image: url(images/entrante4.png); }
+
+	66.4%, 83.06% { background-image: url(images/entrante5.png); }
+
+	83.06%, 100% { background-image: url(images/entrante6.png); }
+
+}
+
+.slider {
+	margin: auto;
+	height: 512px;
+	width: 512px;
+	background: url(images/entrante1.png) no-repeat center;
+	background-size: contain;
+	-webkit-animation: carrusel-infinito 20s infinite 2s alternate ease-out;
+	animation: carrusel-infinito 20s infinite 2s alternate ease-out;
+}
+
+
+
+
+.aperitivos div img {
+    width: 34%;
+    height: auto;
+}
+
+/* Posicionamiento de pizzas */
+.pizzas {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    grid-area: pizzas; 
+}
+.pizzas h3 {
+    font-size: 1.3em;
+}
+.pizzas>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 100%;
+}
+.pizzas>div>div {
+    width: 45%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.deslizante {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.texto {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 3s;
+}
+.texto p {
+    text-align: right;
+    margin: 5px;
+    font-size: 1.3em;
+}
+.deslizante img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transition: transform 2s;
+}
+.deslizante:hover img{
+    transform: translate(55%);
+}
+.deslizante:hover .texto {
+    opacity: 1;
+}
+/*Posicionamiento de pizza-del-dia*/
+.pizza-del-dia {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    grid-area: pizza-del-dia;
+    overflow: hidden;
+}
+.pizza-del-dia div, .pizza-del-dia h2 {
+    width: 30%;
+}
+.pizza-del-dia img {
+    transition: all 20s;
+}
+.pizza-del-dia img {
+    transform: rotate(360deg);
+}
+.pizza-del-dia div h4 {
+    font-size: 1.8em;
+}
+.pizza-del-dia div ul {
+    font-size: 1.3em;
+}
+.pizza-del-dia div p {
+    font-size: 1.5em;
+    text-align: right;
+    margin: 5px;
+}
+
+/*Posicionamiento de postres y bebidas*/
+.postres {
+    display: flex;
+    flex-direction: column;
+}
+.postres div {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.postres div img {
+    width: 30%;
+    height: auto;
+}
+.bebidas {
+    display: flex;
+    flex-direction: column;
+}
+.bebidas div {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.bebidas div img {
+    width: 30%;
+    height: auto;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header {
+    background-color: white;
+    grid-area: header;
+}
+h1 {
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+header img {
+    width: 95px;
+}
+.postres {
+    background-color: white;
+    grid-area: postres;
+}
+.bebidas {
+    background-color: white;
+    grid-area: bebidas;
+}
+footer {
+    padding: 5px;
+    background-color: white;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+}
+footer>div {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 100%;
+    flex-wrap: wrap;
+}
+footer>div>div {
+    width: 60%;
+}
+footer div p {
+    font-size: 0.9em;
+}
+
+footer img {
+    width: 10%;
+    height: auto;
+    padding: 0px 5px;   
+}
+
+/* Reglas de estilo */
+h1, h2, h3 {
+    text-transform: uppercase;   
+}
+.pizza-del-dia div h4 {
+    width: 100%;
+    text-align: right;
+    font-size: 1.8em;
+}
+.pizza-del-dia div ul {
+    width: 100%;
+}
+.pizza-del-dia div ul li{
+    width: 100%;
+    text-align: right;
+}
