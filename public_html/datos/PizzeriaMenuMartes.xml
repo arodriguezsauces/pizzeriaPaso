@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<menus>
+    <menu codigoPizza="P02">
+        <precio>7</precio>
+    </menu>
+    <menu codigoPizza="P06"/>
+    <menu codigoPizza="P07"/>
+    <menu codigoPizza="P08"/>
+    <menu codigoPizza="P09"/>
+</menus>
+<!--
+    AQUI ESTAN LAS PIZZAS DEL MARTES, LA PIZZA DEL DIA REBAJADA.
+-->

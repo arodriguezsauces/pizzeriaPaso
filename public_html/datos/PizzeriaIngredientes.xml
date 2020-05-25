@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<listadoIngredientes>
+    <ingrediente>tomate</ingrediente>
+    <ingrediente>mozarella</ingrediente>
+    <ingrediente>pina</ingrediente>
+    <ingrediente>bacon</ingrediente>
+    <ingrediente>aceituna verde</ingrediente>
+    <ingrediente>aceituna negra</ingrediente>
+    <ingrediente>salsa barbacoa</ingrediente>
+    <ingrediente>carne</ingrediente>
+    <ingrediente>queso cheddar</ingrediente>
+    <ingrediente>atun</ingrediente>
+    <ingrediente>maiz</ingrediente>
+    <ingrediente>champinon</ingrediente>
+    <ingrediente>queso parmesano</ingrediente>
+    <ingrediente>queso azul</ingrediente>
+    <ingrediente>esparragos</ingrediente>
+    <ingrediente>cebolla</ingrediente>
+</listadoIngredientes>
+<!--
+    LISTADO DE TODOS LOS INGREDIENTES DE LA CARTA.
+-->
